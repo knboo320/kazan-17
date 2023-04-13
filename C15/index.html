@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <img src="./img/Frame 1.png" data-speed="5" class="layer">
+        <img src="./img/Frame 2.png" data-speed="-6" class="layer">
+        <img src="./img/Frame 3.png" data-speed="3" class="layer">
+        <img src="./img/Frame 4.png" data-speed="-2" class="layer">
+        <img src="./img/Frame 5.png" data-speed="9" class="layer">
+        <img src="./img/Frame 6.png" data-speed="7" class="layer">
+        <img src="./img/Frame 7.png" data-speed="8" class="layer">
+        <img src="./img/Frame 8.png" data-speed="-5" class="layer">
+        <img src="./img/Frame 9.png" data-speed="4" class="layer">
+        <img src="./img/Frame 10.png" data-speed="2" class="layer">
+        <img src="./img/Frame 11.png" data-speed="-5" class="layer">
+        <img src="./img/Frame 12.png" data-speed="6" class="layer">
+        <h2 data-speed="2" class="layer">Parallax</h2>
+    </section>
+    <script type="text/javascript">
+        document.addEventListener("mousemove", (e) => {
+            document.querySelectorAll('.layer').forEach(layer => {
+                const speed = layer.getAttribute('data-speed')
+
+                const x = (e.pageX * speed) / 100
+                const y = (e.pageY * speed) / 100
+
+                layer.style.transform = `translateX(${x}) translateY(${y})`
+            })
+
+        })
+    </script>
+</body>
+</html>
